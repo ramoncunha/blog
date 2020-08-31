@@ -3,7 +3,7 @@ module.exports = {
     siteTitle: 'Ramon Cunha - Blog',
     siteDescription: 'Blog criado para compartilhar conhecimento sobre tecnologias diversas.',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'http://localhost:8000/',
+    siteUrl: 'https://ramoncunha.netlify.app',
     pathPrefix: '/',
     siteLanguage: 'pt',
     ogLanguage: `pt_BR`,
