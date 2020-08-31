@@ -1,33 +1,25 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Starter',
-    siteDescription: 'Starter for Gatsby Theme Chronoblog',
+    siteTitle: 'Ramon Cunha - Blog',
+    siteDescription: 'Blog criado para compartilhar conhecimento sobre tecnologias diversas.',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog.now.sh/',
+    siteUrl: 'http://localhost:8000/',
     pathPrefix: '/',
-    siteLanguage: 'en',
-    ogLanguage: `en_US`,
-    author: 'Site Author', // for example - 'Ivan Ganev'
-    authorDescription: 'short author description', // short text about the author
-    avatar: '/avatar.jpg',
+    siteLanguage: 'pt',
+    ogLanguage: `pt_BR`,
+    author: 'Ramon Cunha',
+    authorDescription: 'Back-end Developer - Aprendendo e compartilhando!', // short text about the author
+    avatar: '/perfil-blog.jpeg',
     twitterSite: '', // website account on twitter
     twitterCreator: '', // creator account on twitter
     social: [
       {
-        icon: `at`,
-        url: `mailto:mymail@mail.com`
-      },
-      {
-        icon: `twitter`,
-        url: `https://twitter.com/ganevru`
-      },
-      {
         icon: `github`,
-        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
+        url: `https://github.com/ramoncunha`
       },
       {
-        icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
+        icon: `linkedin`,
+        url: `https://www.linkedin.com/in/ramoncunha`
       }
     ]
   },
@@ -37,9 +29,9 @@ module.exports = {
       options: {
         uiText: {
           // ui text fot translate
-          feedShowMoreButton: 'show more',
-          feedSearchPlaceholder: 'search',
-          cardReadMoreButton: 'read more →',
+          feedShowMoreButton: 'ver mais',
+          feedSearchPlaceholder: 'buscar',
+          cardReadMoreButton: 'ler mais →',
           allTagsButton: 'all tags'
         },
         feedItems: {

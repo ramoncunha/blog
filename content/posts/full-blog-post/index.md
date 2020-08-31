@@ -1,7 +1,7 @@
 ---
 title: Full Blog Post Example
 cover: ./image.jpg
-date: 2019-12-01
+date: 2020-08-030
 description: All the usual blog post.
 tags: ['post']
 ---
