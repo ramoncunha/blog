@@ -1,9 +1,10 @@
 ---
-title: uname -a
+title: 'Dev Java: por onde comecei?'
 cover: ./image.jpg
 date: 2020-08-031
-description: conheça um pouco sobre o autor!
+description: dicas de curso e? sites para aprender
 tags: ['post', 'sobremim']
 ---
 
-Eu sou o Ramon!
+##### Uma dúvida comum quando estamos iniciando na programação é: onde posso encontrar bons cursos e sites para aprender sobre programação?
+
