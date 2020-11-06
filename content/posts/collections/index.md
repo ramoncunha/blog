@@ -21,9 +21,9 @@ Vamos começar do começo. A interface Iterable é a raiz da hierarquia e permit
 ## Collection
 
 A próxima da hierarquia é a interface Collection. Ela diz quais os métodos uma collection vai implementar. Ou seja, ela declara que toda collection deve ter métodos como
-- size() para saber o tamanho da coleção
-- isEmpty() para saber se a coleção está vazia
-- add(Element e) para adicionar um elemento
+- ``size()`` para saber o tamanho da coleção
+- ``isEmpty()`` para saber se a coleção está vazia
+- ``add(Element e)`` para adicionar um elemento
 
 entre muitos outros.
 
@@ -47,11 +47,45 @@ Duas implementações de List são ArrayList e LinkedList. Elas têm declaraçõ
 
 ## Set
 
-Set não permite elementos duplicados 
+Set não permite elementos duplicados e não guarda a ordem dos elementos, além de permitir elemento nulo. Então, se a ordem de inserção e não duplicidade de elementos é importante para você, fique ligado.
 
+HashSet, LinkedHashSet e TreeSet são implementações comuns de Set.
 
-Referência:
-https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html
-https://www.youtube.com/watch?v=Ma7u6KEKzPE&ab_channel=edureka%21
-https://codenuclear.com/how-arraylist-works-internally-java/#:~:text=Overview,increase%20the%20size%20of%20array.
-https://www.journaldev.com/13386/java-linkedlist-linkedlist-java#:~:text=As%20we%20know%2C%20internally%20Java,represents%20it's%20elements%20as%20Nodes.&text=Left%20side%20Node%20Part%20is,Or%20Element)%20in%20the%20LinkedList.
+![interface-set](img/set.png)
+
+Toda vez que um **HashSet** é criado, um HashMap é instanciado por debaixo dos panos. No HashSet os elementos são armazenados em uma tabela hash, CHAVE / VALOR. No entanto, o set não possui índice e você não poderá o elemento 1, 2 ou N...
+
+**LinkedHashSet** é uma boa opção caso você precise manter a ordem dos elementos. Ele continuará não permitindo elementos duplicados e também não há índice.
+
+**TreeSet** faz a ordenação automática dos elementos inseridos. Se você está inserindo uma coleção de String o retorno é em ordem alfabética. O TreeSet utiliza o método ``compare(Object o1, Object o2)`` para comparar em ordem ascendente.
+
+*Veja outras implementações de Set na [documentação da Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html).*
+
+## Queue
+
+Queue é uma interface que garante o comportamento de uma fila (First In First Out) para as classes que a implementam.
+
+![interface-queue](img/queue.png)
+
+**PriorityQueue** é uma classe que implementa queue. A inserção será sempre após o último elemento da fila, é possível consultar o primeiro da fila e remover o primeiro. Tem todas as funções que uma fila deveria ter. O detalhe é que essa fila utilize o método ``compareTo(Object o1)`` para definir uma prioridade.
+
+Outra classe que implementa queue é LinkedList. Ao instanciar
+```java 
+Queue<String> fila = new LinkedList<>();
+```
+você terá uma lista encadeada mas apenas com as funções de fila.
+
+*Veja outras implementações de Queue [clicando aqui](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html)*
+
+## Map
+
+Se você reparar na capa deste post, verá que o Map não está 
+
+![interface-map](img/map.png)
+
+*Referência:*
+- https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html
+- https://www.youtube.com/watch?v=Ma7u6KEKzPE&ab_channel=edureka%21
+- https://codenuclear.com/how-arraylist-works-internally-java/#:~:text=Overview,increase%20the%20size%20of%20array.
+- https://www.journaldev.com/13386/java-linkedlist-linkedlist-java#:~:text=As%20we%20know%2C%20internally%20Java,represents%20it's%20elements%20as%20Nodes.&text=Left%20side%20Node%20Part%20is,Or%20Element)%20in%20the%20LinkedList.
+- https://www.youtube.com/watch?v=9wyov5l9a_U&ab_channel=DevDojo
