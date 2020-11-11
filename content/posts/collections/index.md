@@ -2,7 +2,7 @@
 title: 'Java Collections'
 cover: ./img/cover.png
 date: 2020-10-002
-description: List, Set, Queue, Map
+description: O básico de List, Set, Queue, Map
 tags: ['post', 'collections']
 ---
 
@@ -21,13 +21,13 @@ Vamos começar do começo. A interface Iterable é a raiz da hierarquia e permit
 ## Collection
 
 A próxima da hierarquia é a interface Collection. Ela diz quais os métodos uma collection vai implementar. Ou seja, ela declara que toda collection deve ter métodos como
-- ``size()`` para saber o tamanho da coleção
-- ``isEmpty()`` para saber se a coleção está vazia
+- ``size()`` para saber o tamanho da collection
+- ``isEmpty()`` para saber se a collection está vazia
 - ``add(Element e)`` para adicionar um elemento
 
 entre muitos outros.
 
-Mas veja bem, a **interface** não diz como adicionar um elemento em uma coleção ou como saber o tamanho da coleção. Ela apenas indica que cada coleção deverá implementar sua propria maneira de fazer isso.
+Mas veja bem, a **interface** não diz como adicionar um elemento em uma coleção ou como saber o tamanho. Ela apenas indica que cada coleção deverá implementar sua propria maneira de fazer isso.
 
 ![interface-collection](img/collection.png)
 
@@ -53,7 +53,7 @@ HashSet, LinkedHashSet e TreeSet são implementações comuns de Set.
 
 ![interface-set](img/set.png)
 
-Toda vez que um **HashSet** é criado, um HashMap é instanciado por debaixo dos panos. No HashSet os elementos são armazenados em uma tabela hash, CHAVE / VALOR. No entanto, o set não possui índice e você não poderá o elemento 1, 2 ou N...
+Toda vez que um **HashSet** é criado, um HashMap é instanciado por debaixo dos panos. O Set não possui índice e você não poderá o recuperar um elemento pela chave.
 
 **LinkedHashSet** é uma boa opção caso você precise manter a ordem dos elementos. Ele continuará não permitindo elementos duplicados e também não há índice.
 
@@ -79,13 +79,34 @@ você terá uma lista encadeada mas apenas com as funções de fila.
 
 ## Map
 
-Se você reparar na capa deste post, verá que o Map não está 
+Se você reparar na capa deste post, verá que Map não estende de collection. Essa interface tem suas proprias definições.
+
+Map é uma collection que guarda os elementos utilizando dois parâmetros: *Key* e *Value*. Key é a chave utilizada para acessar um valor. Value é o valor proriamente dito, aquilo que você está guardando. Map não pode conter chaves duplicadas; cada chave vai mapear um único valor.
 
 ![interface-map](img/map.png)
+
+**HashMap** é uma implementação de Map que utiliza uma função hash para endereçar os elementos da coleção. A função hash é um calculo que retorna um valor numérico. Esse valor retornado será o endereço desse elemento em um vetor criado pela linguagem. Dentro desse vetor, existe uma lista encadeada mas vamos parar por aqui para não ficar muito confuso.
+A função hash pode ser sobrescrita com o método `hashCode()`.
+
+Quando você adiciona um elemento no HashMap a chave será utilizada na função hash. Vamos ao exemplo.
+
+Quando você insere um elemento na coleção
+```java
+public class LinguagensDeProgramacao {
+
+}
+
+Map<Integer, LinguagensDeProgramacao> linguagens = new HashMap<>();
+linguagensDeProgramacao.put(1, "Java");
+```
+A chave (neste caso é 1) será utilizada para calcular o hash. 
+
+*Veja outras implementações de Map na [documentação da Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html)*
 
 *Referência:*
 - https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html
 - https://www.youtube.com/watch?v=Ma7u6KEKzPE&ab_channel=edureka%21
 - https://codenuclear.com/how-arraylist-works-internally-java/#:~:text=Overview,increase%20the%20size%20of%20array.
-- https://www.journaldev.com/13386/java-linkedlist-linkedlist-java#:~:text=As%20we%20know%2C%20internally%20Java,represents%20it's%20elements%20as%20Nodes.&text=Left%20side%20Node%20Part%20is,Or%20Element)%20in%20the%20LinkedList.
+- https://www.journaldev.com/13386/java-linkedlist-linkedlist-java
 - https://www.youtube.com/watch?v=9wyov5l9a_U&ab_channel=DevDojo
+- https://www.java8net.com/2020/01/how-hashmap-works-internally-in-java.html
