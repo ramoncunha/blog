@@ -1,7 +1,7 @@
 ---
 title: 'Java Collections'
 cover: ./img/cover.png
-date: 2020-10-002
+date: 2020-11-011
 description: O básico de List, Set, Queue, Map
 tags: ['post', 'collections']
 ---
@@ -81,25 +81,14 @@ você terá uma lista encadeada mas apenas com as funções de fila.
 
 Se você reparar na capa deste post, verá que Map não estende de collection. Essa interface tem suas proprias definições.
 
-Map é uma collection que guarda os elementos utilizando dois parâmetros: *Key* e *Value*. Key é a chave utilizada para acessar um valor. Value é o valor proriamente dito, aquilo que você está guardando. Map não pode conter chaves duplicadas; cada chave vai mapear um único valor.
+Map é uma collection que guarda os elementos utilizando dois parâmetros: *Key* e *Value*. Key é a chave utilizada para acessar um valor. Value é o valor proriamente dito, aquilo que você está guardando. Map não pode conter chaves duplicadas; cada chave vai mapear um único valor; a ordem dos elementos não é garantida.
 
 ![interface-map](img/map.png)
 
 **HashMap** é uma implementação de Map que utiliza uma função hash para endereçar os elementos da coleção. A função hash é um calculo que retorna um valor numérico. Esse valor retornado será o endereço desse elemento em um vetor criado pela linguagem. Dentro desse vetor, existe uma lista encadeada mas vamos parar por aqui para não ficar muito confuso.
 A função hash pode ser sobrescrita com o método `hashCode()`.
 
-Quando você adiciona um elemento no HashMap a chave será utilizada na função hash. Vamos ao exemplo.
-
-Quando você insere um elemento na coleção
-```java
-public class LinguagensDeProgramacao {
-
-}
-
-Map<Integer, LinguagensDeProgramacao> linguagens = new HashMap<>();
-linguagensDeProgramacao.put(1, "Java");
-```
-A chave (neste caso é 1) será utilizada para calcular o hash. 
+Quando você adiciona um elemento no HashMap a chave(key) será utilizada na função hash para calcular o endereço no vetor.
 
 *Veja outras implementações de Map na [documentação da Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html)*
 
